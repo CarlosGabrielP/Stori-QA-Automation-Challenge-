@@ -2,14 +2,21 @@ package Project1;
 
 import java.util.concurrent.TimeUnit;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.Assert;
+
+
 
 public class stori_challenge {
 	     
-		 static String baseURL	;
+		 static String baseURL;
+		 
+		 
+		 
 	 
 	 public static void main(String []args ) throws InterruptedException{
 		 System.setProperty("webdriver.chrome.driver","C:/Users/cgabr/SeleniumWebDriver/chromedriver.exe");
@@ -19,6 +26,7 @@ public class stori_challenge {
 		 // 1. Go to the specified link 
 		 driver.get(baseURL);
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 
 		 // 2. Selecting Radio buttons
 		 WebElement radioButton2 = driver.findElement(By.cssSelector("input[value='radio2'"));
 		 radioButton2.click();
@@ -59,23 +67,25 @@ public class stori_challenge {
 		 Thread.sleep(1500);
 		 WebElement buttonAlert = driver.findElement(By.cssSelector("input[id=\"alertbtn\"]"));
 		 buttonAlert.click();
+		 Thread.sleep(1000);
 		 String alert_text = driver.switchTo().alert().getText();
 		 System.out.println(alert_text);
 		 
-		 
+		 // 7. Print if the Element Displayed Example is hidden or shown
 		 driver.switchTo().alert().accept();
-		 Boolean element_displayed =  driver.findElement(By.xpath("//*[@id=\"displayed-text\"]")).isDisplayed(); 
-		 
-		 
-		 
-		 if (element_displayed = true) {
-			 System.out.println("The element is shown ");
+		 WebElement element_displayed =  driver.findElement(By.xpath("//*[@id=\"displayed-text\"]")); 
+		 try {
+			 Assert.assertEquals(true, element_displayed.isDisplayed());
+			 System.out.println("The element is shown");
 			 
 		 }
-		 else {
-			 System.out.println("The element is hidden");
+		 catch(AssertionError e) {
+			 System.out.println("Element is hidden");
 			 
 		 }
+		
+		
+		 
 		 
 		 
 		 
