@@ -18,7 +18,7 @@ public class stori_challenge {
 		 
 	 
 	 public static void main(String []args ) throws InterruptedException{
-		 	System.setProperty("webdriver.chrome.driver","C:/Users/cgabr/SeleniumWebDriver/chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver","C:/Users/cgabr/SeleniumWebDriver/chromedriver.exe");
 		
 		
 		 baseURL = "https://rahulshettyacademy.com/AutomationPractice/";
@@ -83,18 +83,7 @@ public class stori_challenge {
 		 catch(AssertionError e) {
 			 System.out.println("Element is hidden");
 			 
-		 }
-		
-		
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+		 } 
 		 
 		 Thread.sleep(2500);
 		 driver.quit();
