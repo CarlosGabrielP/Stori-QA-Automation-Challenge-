@@ -16,10 +16,10 @@ public class stori_challenge {
 		 static String baseURL;
 		 
 		 
-		 
 	 
 	 public static void main(String []args ) throws InterruptedException{
-		 System.setProperty("webdriver.chrome.driver","C:/Users/cgabr/SeleniumWebDriver/chromedriver.exe");
+		 	System.setProperty("webdriver.chrome.driver","C:/Users/cgabr/SeleniumWebDriver/chromedriver.exe");
+		
 		
 		 baseURL = "https://rahulshettyacademy.com/AutomationPractice/";
 		 WebDriver driver = new ChromeDriver();
@@ -72,6 +72,7 @@ public class stori_challenge {
 		 System.out.println(alert_text);
 		 
 		 // 7. Print if the Element Displayed Example is hidden or shown
+		 
 		 driver.switchTo().alert().accept();
 		 WebElement element_displayed =  driver.findElement(By.xpath("//*[@id=\"displayed-text\"]")); 
 		 try {
